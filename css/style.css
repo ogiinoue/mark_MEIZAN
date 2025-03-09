@@ -1,0 +1,426 @@
+/* ベースリセット */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: sans-serif;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* -------------- */
+/* HEADER */
+/* -------------- */
+.header {
+  background-color: #fff;
+}
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 30px;
+}
+
+.logo {
+  width: 160px;
+  height: 90px;
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  display: block;
+  height: 50px;
+}
+
+.header__block {
+  display: block;
+  top: 30px;
+  right: 10px;
+  background-color: #fff;
+  z-index: 2;
+}
+
+.header__nav {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.header__font {
+  display: block;
+  font-size: 15px;
+  text-align: center;
+}
+
+.hamburger_menu{
+  display: none;
+}
+
+
+/* -------------- */
+/* MAIN VISUAL (スライダー) */
+/* -------------- */
+/* メインビジュアル全体 */
+.main-visual {
+  position: relative;
+  width: 100%;
+  max-width: 1200px; /* 必要に応じて調整 */
+  margin: 0 auto;
+  /* イラスト同士が重ならないよう、上下に余白をつけたい場合 */
+  padding: 40px 0;
+}
+
+/* 手書き風バー配置 */
+
+
+/* スライダー */
+.slider {
+  height: 100%;
+  margin: 0px auto;
+  background: no-repeat center / contain url(	https://mark-meizan.io/wp-content/themes/2024.mark-meizan.io/img/top/fv_slide_back.svg);
+}
+
+.slick{
+  margin: 0px auto;
+  width: 100%;
+  height: 100%;
+  margin-top: 150px;
+}
+
+.slick__slide img {
+  width: 100%;
+  max-width: 696px; /* 必要に応じて調整 */
+  height: auto;
+  margin: 0 auto;
+}
+
+
+/* テキストキャプション */
+.caption_title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 20px auto;
+  line-height: 1.4;
+  text-align: center;
+}
+
+
+.slider::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 140px;
+  background: no-repeat center / contain url(https://mark-meizan.io/wp-content/themes/2024.mark-meizan.io/img/top/fv_slide_header.svg);
+  margin: 0px auto -80px;
+  position: relative
+}
+.slider::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 200px;
+  background:no-repeat center / contain url(https://mark-meizan.io/wp-content/themes/2024.mark-meizan.io/img/top/fv_slide_under.svg);
+  margin: 0px auto;
+  padding-top: 30px;
+  position: relative
+}
+
+/* カスタム矢印*/
+
+.slick-prev, .slick-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+/* 左側に配置 */
+.slick-prev {
+  left: 18%; 
+}
+
+/* 右側に配置 */
+.slick-next {
+  right: 18%; 
+}
+
+
+/* ======================================= */
+/* レスポンシブデザイン */
+/* ======================================= */
+
+/* タブレットサイズ（1100px未満）の場合 */
+@media screen and (max-width: 1040px) {
+  .slick__slide img {
+    width: 90%;
+    max-width: none;
+    height: auto;
+  }
+  .slick-prev:before, 
+  .slick-next {
+    display: none !important;
+  }
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    position: relative;
+  }
+
+  .header__logo {
+    font-size: 20px;
+  }
+ /* ハンバーガーメニューが開いたときのスタイル */
+  .header__block {
+    display: none;
+    position: fixed;
+    top: 10%; 
+    right: 9%; 
+    width: 600px; 
+    height: 491px; 
+    background-color: #fff;
+    z-index: 9;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+ 
+  .header__nav {
+    display: block;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 2;
+  }
+
+  
+  .header__font {
+    display: block;
+    padding: 20px;
+    font-size: 25px;
+    text-align: left;
+    border: 1px solid #000;
+    position: relative; /* 追加: 相対位置指定 */
+  }
+  
+  .header__font::after {
+    content: "▼"; /* 追加: 表示する内容 */
+    position: absolute; /* 追加: 絶対位置指定 */
+    right: 10px; /* 追加: 右端からの距離 */
+    top: 50%; /* 追加: 上端から50%の位置 */
+    transform: translateY(-50%); /* 追加: Y軸方向の中央揃え */
+  }
+  
+  .header__font.no-dropdown::after {
+    content: ""; /* ▼記号を非表示にする */
+  }
+  
+
+  body.noscroll {
+    overflow: hidden;
+  }
+  /* ハンバーガーメニューが開いたときのスタイル */
+
+  .hamburger_menu {
+    display: block;
+    width: 30px;
+    height: 24px;
+    position: absolute;
+    right: 80px;
+    margin: 0;
+    z-index: 2;
+  }
+
+  .bar {
+    display: block;
+    width: 100%;
+    height: 2px;
+    border-radius: 1px;
+    background-color: #000000;
+    position: absolute;
+  }
+  .bar_top {
+    top: 0;
+    left: 0;
+  }
+  .bar_middle {
+    top: 11px;
+    left: 0;
+  }
+  .bar_bottom {
+    bottom: 0;
+    left: 0;
+  }
+
+  /* ハンバーガーメニューを開いた時の表示 */
+
+  .hamburger_menu.cross .bar_top {
+    transform: rotate(45deg);
+    top: 11px;
+    transition: .3s;
+  }
+  .hamburger_menu.cross .bar_middle {
+    opacity: 0;
+    transition: .3s;
+  }
+  .hamburger_menu.cross .bar_bottom {
+    transform: rotate(-45deg);
+    bottom: 11px;
+    transition: .3s;
+  }
+
+
+  /* スライダー */
+.slider {
+  height: 100%;
+  margin: 0px auto;
+  background: no-repeat center / contain url(	https://mark-meizan.io/wp-content/themes/2024.mark-meizan.io/img/top/fv_slide_back.svg);
+}
+
+.slick{
+  margin: 0px auto;
+  width: 100%;
+  height: 100%;
+  margin-top: 150px;
+}
+
+.slick__slide img {
+  width: 100%;
+  max-width: 696px; /* 必要に応じて調整 */
+  height: auto;
+  margin: 0 auto;
+}
+
+
+/* テキストキャプション */
+.caption_title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 20px auto;
+  line-height: 1.4;
+  text-align: center;
+}
+
+/* カスタム矢印*/
+
+.slick-prev, .slick-next {
+  display: none;
+}
+
+.slick__slide img {
+    width: 100%;
+    height: auto;
+}
+}
+
+/* スマートフォンサイズ（660px未満）の場合 */
+@media screen and (max-width: 660px) {
+  body {
+    font-size: 1.4rem;
+    line-height: 1.6;
+  }
+
+}
+
+/* スマートフォンサイズ（480px未満）の場合 */
+@media screen and (max-width: 480px) {
+  body {
+    font-size: 1.2rem;
+    line-height: 1.5;
+  }
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+  }
+
+  .logo img {
+    height: 50px;
+  }
+/* ハンバーガーメニューが開いたときのスタイル */
+  .header__block {
+    display: none;
+    position: fixed;
+    top: 10%; 
+    right: 12%; 
+    width: 300px; 
+    height: 391px; 
+    background-color: #fff;
+    z-index: 9;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+ 
+  .header__nav {
+    display: block;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 2;
+  }
+
+  
+  .header__font {
+    display: block;
+    padding: 20px;
+    font-size: 15px;
+    text-align: left;
+    border: 1px solid #000;
+    position: relative; /* 追加: 相対位置指定 */
+  }
+  
+  .header__font::after {
+    content: "▼"; /* 追加: 表示する内容 */
+    position: absolute; /* 追加: 絶対位置指定 */
+    right: 10px; /* 追加: 右端からの距離 */
+    top: 50%; /* 追加: 上端から50%の位置 */
+    transform: translateY(-50%); /* 追加: Y軸方向の中央揃え */
+  }
+  
+  .header__font.no-dropdown::after {
+    content: ""; /* ▼記号を非表示にする */
+  }
+  
+  .hamburger_menu {
+    display: block;
+    position: absolute;
+    right: 20px;
+    margin: 30px 30px;
+    z-index: 3;
+  }
+/* ハンバーガーメニューが開いたときのスタイル */
+  .bar {
+    height: 2px;
+    background-color: #000;
+  }
+
+  .slider {
+    padding: 10px 0;
+  }
+
+  .slick__slide img {
+    width: 100%;
+    height: auto;
+  }
+
+  .slick-prev {
+    left: -5%; /* スマホサイズでの調整 */
+  }
+  .slick-next {
+    right: -5%; /* スマホサイズでの調整 */
+  }
+}

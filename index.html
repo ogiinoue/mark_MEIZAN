@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>mark MEIZAN | 鹿児島の未来にマークする</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="slick/slick.css">
+    <link rel="stylesheet" href="slick/slick-theme.css">
+</head>
+<body>
+
+  <!-- HEADER : ロゴ・グローバルナビゲーション -->
+  <header class="header">
+    <div class="header-inner">
+      <div class="logo">
+          <img src="https://mark-meizan.io/wp-content/themes/2024.mark-meizan.io/img/logo/mm-logo.png" alt="markMEIZANロゴ">
+      </div>
+      <nav class="header__block">
+        <ul class="header__nav">
+          <li class="header__font no-dropdown" href="#!">markMEIZANについて</li>
+          <li class="header__font" href="#!">イベント</li>
+          <li class="header__font" href="#!">支援</li>
+          <li class="header__font" href="#!">施設</li>
+          <li class="header__font" href="#!">入居者</li>
+          <li class="header__font no-dropdown" href="#!">おしらせ・ブログ</li>
+        </ul>
+      </nav>
+    </div>
+    <!-- ハンバーガーメニュー -->
+    <div class="hamburger_menu">
+      <span class="bar bar_top"></span>
+      <span class="bar bar_middle"></span>
+      <span class="bar bar_bottom"></span>
+    </div>
+    <!-- ハンバーガーメニュー -->
+  </header>
+
+    <!-- スライダー本体 -->
+    <div class="slider">
+        <!-- スライド要素 -->
+        <div class="slick">
+          <div class="slick__slide"><img src="https://mark-meizan.io/wp-content/uploads/2025/02/mixvol2_bunner.png" alt=""><p class="caption_title">今年度のマークメイザンイベントの総括イベント</p></div>
+          <div class="slick__slide"><img src="https://mark-meizan.io/wp-content/uploads/2025/01/20250228_TechBeachMeetup_banner.png" alt=""><p class="caption_title">あなたの開発環境、見せてください！</p></div>
+          <div class="slick__slide"><img src="https://mark-meizan.io/wp-content/uploads/2025/02/20241025_igyousyukouryukai_bunner.png" alt=""><p class="caption_title">少人数制でスナック菓子をつまみながらカジュアルに</p></div>
+          <div class="slick__slide"><img src="https://mark-meizan.io/wp-content/uploads/2024/11/mM_相談受付中バナー_修正.png" alt=""><p class="caption_title">事業・経営・起業等の相談受付中！</p></div>
+        </div>
+        <button type="button" class="slick-prev">Prev</button>
+        <button type="button" class="slick-next">Next</button>
+    </div>
+    
+  
+ 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script> <!--jQueryを読み込む-->
+  <script src="./js/script.js"></script> <!--jsファイルを読み込む-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script src="slick/slick.min.js"></script>
+  <script type="text/javascript">
+    $(function(){
+        $('.slick').slick({
+            autoplay: true,
+            arrows: true,
+            prevArrow: $('.slider .slick-prev'),
+            nextArrow: $('.slider .slick-next'),
+        });
+      });
+  </script>
+</body>
+</html>
